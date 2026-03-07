@@ -82,7 +82,12 @@ enable: - loglint
 
 linters-settings:
 loglint: # Кастомные чувствительные ключевые слова
-sensitive-keywords: - password - api_key - secret_token - access_token - my_custom_secret
+sensitive-keywords:
+	- password
+	- api_key
+	- secret_token
+	- access_token
+	- my_custom_secret
 
     # Отключить отдельные правила
     disable-rules:
