@@ -5,7 +5,7 @@
 ### Установка
 
 ```bash
-# Установка последней версии (standalone)
+# Установка последней версии
 go install github.com/barashF/test-linter/cmd/loglint@latest
 
 ```
@@ -83,11 +83,11 @@ enable: - loglint
 linters-settings:
 loglint: # Кастомные чувствительные ключевые слова
 sensitive-keywords:
-	- password
-	- api_key
-	- secret_token
-	- access_token
-	- my_custom_secret
+    - password
+    - api_key
+    - secret_token
+    - access_token
+    - my_custom_secret
 
     # Отключить отдельные правила
     disable-rules:
