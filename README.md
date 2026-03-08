@@ -76,24 +76,29 @@ golangci-lint run --enable=loglint --fix ./...
 ```yml
 
 version: "2"
-
+run:
+    issues-exit-code: 1
+    tests: true
+output:
+    formats:
+        text:
+            path: stdout
+            print-linter-name: true
+            print-issued-lines: true
 linters:
-enable: - loglint
+    default: none
+    enable:
+        - loglint
+    settings:
+        loglint:
+            sensitive-keywords:
+                - password
+                - api_key
+                - secret_token
+                - access_token
 
-linters-settings:
-loglint: # Кастомные чувствительные ключевые слова
-sensitive-keywords:
-    - password
-    - api_key
-    - secret_token
-    - access_token
-    - my_custom_secret
-
-    # Отключить отдельные правила
-    disable-rules:
-      - lowercase      # Не проверять регистр первой буквы
-      - cyrillic       # Не проверять кириллицу
-
+            disable-rules:
+                - special-chars
 ```
 
 ## Примеры использования
